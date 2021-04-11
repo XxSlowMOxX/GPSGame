@@ -3,13 +3,15 @@ using System.Collections;
 
 public class TestLocationService : MonoBehaviour
 {
+    GPSPrinter pr;
     void Start()
     {
+        pr = this.GetComponent<GPSPrinter>();
         StartCoroutine(LocationCoroutine());
     }
     IEnumerator LocationCoroutine()
     {
-        Debug.Log("BAZONGA");
+        pr.AddMessage("BAzongus", 2);
         // Uncomment if you want to test with Unity Remote
         /*#if UNITY_EDITOR
                 yield return new WaitWhile(() => !UnityEditor.EditorApplication.isRemoteConnected);
